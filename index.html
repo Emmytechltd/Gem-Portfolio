@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gem's Diary</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .gem-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #12d379;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #37cc29;
+    }
+
+    .bio {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #af3524;
+      font-weight: bold;
+    }
+
+    .socials a:hover {
+      color: #ffa94d;
+    }
+
+    .video-preview {
+      margin-top: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 340px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .testimonials {
+      background-color: #881010;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+
+    .testimonial {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      font-weight: bold;
+      color: #ffa94d;
+    }
+
+    .contact-form {
+      background-color: #1f1f1f;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+
+    .contact-form h2 {
+      margin-bottom: 1rem;
+      color: #ff6600;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background-color: #ff6600;
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #e65c00;
+    }
+
+    button.say-hi {
+      margin-top: 2rem;
+      background-color: #ff6600;
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button.say-hi:hover {
+      background-color: #e65c00;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .gem-img {
+        width: 120px;
+        height: 120px;
+      }
+
+      iframe {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="./profile.jpg" alt="Gem's Diary" class="gem-img" />
+    <h1>Gem's Diary</h1>
+    <p class="bio" id="bio">
+      I'm Gem, a creative YouTuber sharing Trending Gist, daily vlogs, and lifestyle inspiration. Welcome to my profile!
+    </p>
+
+    <div class="socials">
+      <a href="https://youtube.com/@gemsdiary-t7j?si=5-h9osO7Z1r1DaVB" target="_blank">YouTube</a>
+      <a href="https://www.tiktok.com/@gem.portion?_t=ZM-8vyO6rgX36D&_r=1" target="_blank">Tiktok</a>
+      <a href="https://www.facebook.com/share/1PpnUXAvJu/" target="_blank">Facebook</a>
+    </div>
+
+    <div class="video-preview">
+      <h2>Latest YouTube Video</h2>
+      <iframe 
+  src="https://www.youtube.com/embed/BCSIZwpuSGI?start=12&autoplay=1" 
+  title="YouTube video" 
+  allow="autoplay" 
+  allowfullscreen>
+</iframe>
+
+
+    </div>
+
+    <div class="testimonials">
+      <h2>What Fans Say</h2>
+      <p class="testimonial">“Gem’s videos are always so helpful and inspiring!”<br>
+        <span class="testimonial-author">– Sarah K.</span>
+      </p>
+      <p class="testimonial">“Love her energy and editing style. Subscribed!”<br>
+        <span class="testimonial-author">– Mike T.</span>
+      </p>
+    </div>
+
+    <div class="contact-form">
+      <h2>Contact Me</h2>
+      <form onsubmit="handleFormSubmit(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <button class="say-hi" onclick="changeBio()">Say Hi!</button>
+  </div>
+
+  <script>
+    function changeBio() {
+      document.getElementById('bio').innerText =
+        "Thanks for stopping by! Don’t forget to like, comment, and subscribe ❤️";
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been sent.");
+    }
+  </script>
+
+</body>
+</html>
