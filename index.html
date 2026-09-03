@@ -76,6 +76,9 @@
     .submit:hover, .say-hi:hover, .submit:focus-visible, .say-hi:focus-visible { background: var(--coral); transform: translateY(-3px); }
     .form-status { min-height: 20px; margin: 0; color: var(--lime); font-size: .8rem; }
     footer { padding: 34px 0; border-top: 1px solid var(--line); color: var(--muted); display: flex; justify-content: space-between; font-size: .75rem; }
+    .creator-credit { flex-basis: 100%; margin-top: 14px; color: var(--muted); font-size: .68rem; }
+    .creator-credit a { color: var(--lime); text-decoration: none; }
+    .creator-credit a:hover, .creator-credit a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
     [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
     @media (max-width: 700px) { .site-header { top: 10px; } .nav-links a:not(.nav-cta) { display: none; } .page { width: min(100% - 28px, 560px); } .hero { min-height: 730px; padding-top: 150px; display: block; } .hero:before { right: 6%; height: 260px; top: 165px; } .profile-wrap { top: 122px; right: 2px; width: 128px; height: 165px; } h1 { max-width: 360px; font-size: clamp(3.9rem, 18vw, 6.2rem); } .bio { margin-top: 26px; } .hero-note { margin-top: 86px; } .section { padding: 75px 0; } .section-head { display: block; } .section-head p { margin-top: 18px; } .video-layout, .contact-layout { grid-template-columns: 1fr; gap: 35px; } .video-frame { box-shadow: 9px 12px 0 var(--coral); } .testimonial-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; } .testimonial { min-width: 84%; scroll-snap-align: start; } .testimonial:first-child { margin-top: 0; } footer { display: block; } footer span { display: block; margin-top: 8px; } }
@@ -127,7 +130,7 @@
         <button class="submit" type="submit">Send message ↗</button><p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form></div>
     </section>
-    <footer><span>© 2026 Gem's Diary</span><span>Stories worth sharing.</span></footer>
+    <footer><span>© 2026 Gem's Diary</span><span>Stories worth sharing.</span><span class="creator-credit">Created by <a href="https://emmytech.netlify.app/" target="_blank" rel="noopener noreferrer">EmmyTech</a></span></footer>
   </main>
   <script>
     const revealItems = document.querySelectorAll('[data-reveal]');
