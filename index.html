@@ -2,215 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gem's Diary</title>
-  <link rel="shortcut icon" href="/favicon.ico.jpg" type="image/x-icon">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gem's Diary: trending gist, daily vlogs, and lifestyle inspiration." />
+  <meta property="og:title" content="Gem's Diary | Stories worth sharing" />
+  <meta property="og:description" content="Trending gist, daily vlogs, and lifestyle inspiration from Gem." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./profile.jpg" />
+  <title>Gem's Diary | Stories worth sharing</title>
+  <link rel="shortcut icon" href="/favicon.ico.jpg" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .gem-img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #12d379;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      color: #37cc29;
-    }
-
-    .bio {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-    }
-
-    .socials a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #af3524;
-      font-weight: bold;
-    }
-
-    .socials a:hover {
-      color: #ffa94d;
-    }
-
-    .video-preview {
-      margin-top: 2rem;
-    }
-
-    iframe {
-      width: 100%;
-      max-width: 600px;
-      height: 340px;
-      border: none;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-    }
-
-    .testimonials {
-      background-color: #881010;
-      padding: 2rem;
-      border-radius: 12px;
-      margin-top: 2rem;
-    }
-
-    .testimonial {
-      font-style: italic;
-      margin-bottom: 1.5rem;
-    }
-
-    .testimonial-author {
-      font-weight: bold;
-      color: #ffa94d;
-    }
-
-    .contact-form {
-      background-color: #1f1f1f;
-      padding: 2rem;
-      border-radius: 12px;
-      margin-top: 2rem;
-    }
-
-    .contact-form h2 {
-      margin-bottom: 1rem;
-      color: #ff6600;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-    }
-
-    .contact-form button {
-      background-color: #ff6600;
-      color: white;
-      padding: 10px 24px;
-      border: none;
-      border-radius: 25px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .contact-form button:hover {
-      background-color: #e65c00;
-    }
-
-    button.say-hi {
-      margin-top: 2rem;
-      background-color: #ff6600;
-      color: white;
-      padding: 10px 24px;
-      border: none;
-      border-radius: 25px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    button.say-hi:hover {
-      background-color: #e65c00;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .gem-img {
-        width: 120px;
-        height: 120px;
-      }
-
-      iframe {
-        height: 220px;
-      }
-    }
+    :root { --ink: #101312; --paper: #f1f0e9; --lime: #d4f04a; --coral: #ff765e; --muted: #a8afa4; --line: rgba(241, 240, 233, .16); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ink); color: var(--paper); font-family: 'DM Sans', sans-serif; line-height: 1.5; }
+    a { color: inherit; }
+    .site-header { position: fixed; z-index: 10; top: 16px; left: 50%; width: min(1180px, calc(100% - 32px)); transform: translateX(-50%); padding: 12px 16px 12px 22px; border: 1px solid var(--line); border-radius: 99px; background: rgba(16, 19, 18, .76); backdrop-filter: blur(18px); display: flex; align-items: center; justify-content: space-between; }
+    .wordmark { font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+    .wordmark span { color: var(--lime); }
+    .nav-links { display: flex; gap: clamp(14px, 3vw, 34px); align-items: center; font-size: .78rem; color: var(--muted); }
+    .nav-links a { text-decoration: none; transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--lime); }
+    .nav-cta { padding: 9px 16px; border-radius: 99px; color: var(--ink); background: var(--lime); font-weight: 700; }
+    .page { width: min(1180px, calc(100% - 40px)); margin: auto; }
+    .eyebrow { margin: 0 0 14px; color: var(--lime); font-size: .7rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    h1, h2 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; line-height: .96; letter-spacing: -.045em; }
+    h1 { max-width: 720px; font-size: clamp(4.1rem, 10vw, 8.9rem); }
+    h1 em, h2 em { color: var(--coral); font-weight: 600; }
+    h2 { font-size: clamp(3rem, 7vw, 6.8rem); }
+    .hero { min-height: 800px; padding: 172px 0 120px; display: grid; grid-template-columns: 1.35fr .65fr; align-items: end; gap: 40px; position: relative; }
+    .hero:before { content: ''; position: absolute; top: 120px; right: 9%; width: 1px; height: 410px; background: linear-gradient(transparent, var(--coral), transparent); opacity: .7; }
+    .hero-copy { position: relative; z-index: 1; }
+    .bio { max-width: 430px; margin: 28px 0 28px; color: var(--muted); font-size: 1.05rem; }
+    .hero-note { align-self: center; justify-self: end; max-width: 260px; color: var(--muted); font-size: .84rem; }
+    .hero-note strong { display: block; margin-bottom: 10px; color: var(--paper); font-size: 1rem; }
+    .profile-wrap { position: absolute; right: 0; top: 155px; width: 230px; height: 290px; padding: 9px; transform: rotate(5deg); border: 1px solid var(--coral); background: var(--ink); }
+    .gem-img { width: 100%; height: 100%; display: block; object-fit: cover; filter: saturate(.8); }
+    .profile-tag { position: absolute; bottom: -17px; left: -32px; padding: 7px 11px; background: var(--lime); color: var(--ink); font-size: .65rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; transform: rotate(-5deg); }
+    .socials { display: flex; flex-wrap: wrap; gap: 9px; }
+    .socials a { display: inline-flex; align-items: center; gap: 8px; padding: 11px 15px; border: 1px solid var(--line); border-radius: 99px; color: var(--paper); text-decoration: none; font-size: .77rem; font-weight: 600; transition: transform .2s ease, background .2s ease, color .2s ease; }
+    .socials a:hover, .socials a:focus-visible { color: var(--ink); background: var(--lime); transform: translateY(-3px); }
+    .socials b { color: var(--lime); font-size: 1rem; }
+    .socials a:hover b, .socials a:focus-visible b { color: var(--ink); }
+    .section { padding: 110px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 36px; }
+    .section-head p { max-width: 220px; margin: 0; color: var(--muted); font-size: .85rem; }
+    .video-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 34px; align-items: center; }
+    .video-intro p { max-width: 290px; color: var(--muted); }
+    .video-frame { padding: 10px; background: #242a25; border: 1px solid var(--line); border-radius: 16px; box-shadow: 18px 22px 0 var(--coral); }
+    .video-frame iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 9px; }
+    .video-link { display: inline-block; margin-top: 22px; color: var(--lime); font-size: .8rem; font-weight: 700; text-underline-offset: 4px; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .testimonial { min-height: 230px; padding: 26px; border: 1px solid var(--line); background: #1b211d; transition: transform .25s ease, border-color .25s ease; }
+    .testimonial:first-child { margin-top: 40px; }
+    .testimonial:hover { border-color: var(--lime); transform: translateY(-7px); }
+    .testimonial p { margin: 42px 0 24px; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.1; }
+    .testimonial-author { color: var(--coral); font-size: .76rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-copy p { max-width: 360px; color: var(--muted); }
+    .contact-details { display: grid; gap: 8px; margin: 26px 0 28px; }
+    .contact-details a { color: var(--paper); font-size: .9rem; text-decoration: none; transition: color .2s ease; }
+    .contact-details a:hover, .contact-details a:focus-visible { color: var(--lime); }
+    .contact-form { display: grid; gap: 18px; }
+    .field { position: relative; }
+    .field input, .field textarea { width: 100%; padding: 17px 0 11px; border: 0; border-bottom: 1px solid var(--line); outline: none; resize: vertical; color: var(--paper); background: transparent; font: inherit; transition: border-color .2s ease; }
+    .field textarea { min-height: 108px; }
+    .field label { position: absolute; top: 15px; left: 0; color: var(--muted); font-size: .85rem; pointer-events: none; transition: all .2s ease; }
+    .field input:focus, .field textarea:focus, .field input:valid, .field textarea:valid { border-color: var(--lime); }
+    .field input:focus + label, .field textarea:focus + label, .field input:valid + label, .field textarea:valid + label { top: -3px; color: var(--lime); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; }
+    .submit, .say-hi { border: 0; border-radius: 99px; padding: 15px 22px; justify-self: start; cursor: pointer; color: var(--ink); background: var(--lime); font: inherit; font-size: .8rem; font-weight: 700; transition: transform .2s ease, background .2s ease; }
+    .submit:hover, .say-hi:hover, .submit:focus-visible, .say-hi:focus-visible { background: var(--coral); transform: translateY(-3px); }
+    .form-status { min-height: 20px; margin: 0; color: var(--lime); font-size: .8rem; }
+    footer { padding: 34px 0; border-top: 1px solid var(--line); color: var(--muted); display: flex; justify-content: space-between; font-size: .75rem; }
+    [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 700px) { .site-header { top: 10px; } .nav-links a:not(.nav-cta) { display: none; } .page { width: min(100% - 28px, 560px); } .hero { min-height: 730px; padding-top: 150px; display: block; } .hero:before { right: 6%; height: 260px; top: 165px; } .profile-wrap { top: 122px; right: 2px; width: 128px; height: 165px; } h1 { max-width: 360px; font-size: clamp(3.9rem, 18vw, 6.2rem); } .bio { margin-top: 26px; } .hero-note { margin-top: 86px; } .section { padding: 75px 0; } .section-head { display: block; } .section-head p { margin-top: 18px; } .video-layout, .contact-layout { grid-template-columns: 1fr; gap: 35px; } .video-frame { box-shadow: 9px 12px 0 var(--coral); } .testimonial-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; } .testimonial { min-width: 84%; scroll-snap-align: start; } .testimonial:first-child { margin-top: 0; } footer { display: block; } footer span { display: block; margin-top: 8px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { transition-duration: .01ms !important; animation-duration: .01ms !important; } [data-reveal] { opacity: 1; transform: none; } }
   </style>
 </head>
 <body>
+  <header class="site-header">
+    <a class="wordmark" href="#top">Gem's <span>Diary</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#watch">Watch</a><a href="#voices">Voices</a><a class="nav-cta" href="#contact">Say hello</a>
+    </nav>
+  </header>
+  <main id="top" class="page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">Creator · storyteller · curious mind</p>
+        <h1 id="hero-title">Life, with a little more <em>spark.</em></h1>
+        <p class="bio" id="bio">I'm Gem, a creative YouTuber sharing Trending Gist, daily vlogs, and lifestyle inspiration. Welcome to my profile!</p>
+        <div class="socials" aria-label="Social links">
+          <a href="https://www.youtube.com/@Gemreacts.1/featured" target="_blank" rel="noopener noreferrer"><b>◉</b> YouTube</a>
+          <a href="https://www.tiktok.com/@enigma0991?_r=1&_t=ZS-99OxW7gsGsn" target="_blank" rel="noopener noreferrer"><b>♪</b> Tiktok</a>
+          <a href="https://www.facebook.com/share/1PpnUXAvJu/" target="_blank" rel="noopener noreferrer"><b>f</b> Facebook</a>
+        </div>
+      </div>
+      <div class="profile-wrap" data-reveal><img src="./profile.jpg" alt="Gem from Gem's Diary" class="gem-img" /><span class="profile-tag">Since day one</span></div>
+      <p class="hero-note" data-reveal><strong>Currently exploring</strong> The everyday details that make a good story worth sharing.</p>
+    </section>
 
-  <div class="container">
-    <img src="./profile.jpg" alt="Gem's Diary" class="gem-img" />
-    <h1>Gem's Diary</h1>
-    <p class="bio" id="bio">
-      I'm Gem, a creative YouTuber sharing Trending Gist, daily vlogs, and lifestyle inspiration. Welcome to my profile!
-    </p>
+    <section id="watch" class="section video-layout" data-reveal aria-labelledby="video-title">
+      <div class="video-intro"><p class="eyebrow">01 / The latest</p><h2 id="video-title">Press<br /><em>play.</em></h2><p>A quick dose of energy, perspective, and the kind of gist you send to your group chat.</p></div>
+      <div><div class="video-frame"><iframe src="https://www.youtube.com/embed/BCSIZwpuSGI?start=12&autoplay=1" title="Latest YouTube video from Gem's Diary" allow="autoplay" allowfullscreen></iframe></div><a class="video-link" href="https://www.youtube.com/shorts/1hLBfPDl2VQ" target="_blank" rel="noopener noreferrer">Watch the short on YouTube ↗</a><br /><a class="video-link" href="https://www.youtube.com/@Gemreacts.1/featured" target="_blank" rel="noopener noreferrer">Explore Gem's Diary on YouTube ↗</a></div>
+    </section>
 
-    <div class="socials">
-      <a href="https://youtube.com/@gemsdiary-t7j?si=5-h9osO7Z1r1DaVB" target="_blank">YouTube</a>
-      <a href="https://www.tiktok.com/@gem.portion?_t=ZM-8vyO6rgX36D&_r=1" target="_blank">Tiktok</a>
-      <a href="https://www.facebook.com/share/1PpnUXAvJu/" target="_blank">Facebook</a>
-    </div>
+    <section id="voices" class="section" aria-labelledby="voices-title">
+      <div class="section-head" data-reveal><div><p class="eyebrow">02 / Kind words</p><h2 id="voices-title">The <em>community</em><br />speaks.</h2></div><p>Small moments of connection from people watching along.</p></div>
+      <div class="testimonial-grid" data-reveal>
+        <article class="testimonial"><span class="eyebrow">01</span><p>“Gem’s videos are always so helpful and inspiring!”</p><span class="testimonial-author">Sarah K.</span></article>
+        <article class="testimonial"><span class="eyebrow">02</span><p>“Love her energy and editing style. Subscribed!”</p><span class="testimonial-author">Mike T.</span></article>
+      </div>
+    </section>
 
-    <div class="video-preview">
-      <h2>Latest YouTube Video</h2>
-      <iframe 
-  src="https://www.youtube.com/embed/BCSIZwpuSGI?start=12&autoplay=1" 
-  title="YouTube video" 
-  allow="autoplay" 
-  allowfullscreen>
-</iframe>
-
-
-    </div>
-
-    <div class="testimonials">
-      <h2>What Fans Say</h2>
-      <p class="testimonial">“Gem’s videos are always so helpful and inspiring!”<br>
-        <span class="testimonial-author">– Sarah K.</span>
-      </p>
-      <p class="testimonial">“Love her energy and editing style. Subscribed!”<br>
-        <span class="testimonial-author">– Mike T.</span>
-      </p>
-    </div>
-
-    <div class="contact-form">
-      <h2>Contact Me</h2>
-      <form onsubmit="handleFormSubmit(event)">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-
-    <button class="say-hi" onclick="changeBio()">Say Hi!</button>
-  </div>
-
+    <section id="contact" class="section contact-layout" data-reveal aria-labelledby="contact-title">
+      <div class="contact-copy"><p class="eyebrow">03 / Get in touch</p><h2 id="contact-title">Let's make<br /><em>something.</em></h2><p>Have a thought, a collaboration, or just a hello? The inbox is open.</p><div class="contact-details"><a href="https://www.youtube.com/@Gemreacts.1/featured" target="_blank" rel="noopener noreferrer">youtube.com/@Gemreacts.1 ↗</a><a href="https://www.tiktok.com/@enigma0991?_r=1&_t=ZS-99OxW7gsGsn" target="_blank" rel="noopener noreferrer">tiktok.com/@enigma0991 ↗</a></div><button class="say-hi" type="button" onclick="changeBio()">Say hi to Gem ↗</button></div>
+      <div class="contact-form"><form onsubmit="handleFormSubmit(event)">
+        <div class="field"><input id="name" name="name" type="text" required autocomplete="name" /><label for="name">Your name</label></div>
+        <div class="field"><input id="email" name="email" type="email" required autocomplete="email" /><label for="email">Your email</label></div>
+        <div class="field"><textarea id="message" name="message" rows="4" required></textarea><label for="message">Your message</label></div>
+        <button class="submit" type="submit">Send message ↗</button><p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form></div>
+    </section>
+    <footer><span>© 2026 Gem's Diary</span><span>Stories worth sharing.</span></footer>
+  </main>
   <script>
-    function changeBio() {
-      document.getElementById('bio').innerText =
-        "Thanks for stopping by! Don’t forget to like, comment, and subscribe ❤️";
-    }
-
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      alert("Thank you! Your message has been sent.");
-    }
+    const revealItems = document.querySelectorAll('[data-reveal]');
+    const revealObserver = new IntersectionObserver((entries, observer) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }); }, { threshold: .12 });
+    revealItems.forEach((item) => revealObserver.observe(item));
+    function changeBio() { document.getElementById('bio').innerText = "Thanks for stopping by! Don't forget to like, comment, and subscribe."; document.querySelector('.say-hi').innerText = 'You are lovely ↗'; }
+    function handleFormSubmit(event) { event.preventDefault(); document.getElementById('form-status').innerText = 'Thank you! Your message has been sent.'; event.target.reset(); }
   </script>
-
 </body>
 </html>
